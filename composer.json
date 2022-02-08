@@ -1,0 +1,15 @@
+{
+  "name": "olistpax/broker",
+  "type": "project",
+  "description": "Encapsulate logic for broker connections using Laravel.",
+  "keywords": [
+    "kafka",
+    "broker",
+    "laravel"
+  ],
+  "require": {
+    "php": "^8.0",
+    "mateusjunges/laravel-kafka": "^1.5",
+    "illuminate/log": "^8.0"
+  }
+}
