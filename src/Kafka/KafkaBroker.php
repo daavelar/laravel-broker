@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Broker\Kafka;
+namespace Broker\Kafka;
 
 use App\Broker\BrokerContract;
 use Junges\Kafka\Facades\Kafka;

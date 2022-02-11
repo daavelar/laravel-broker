@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Broker\Log;
+namespace Broker\Log;
 
 use App\Broker\BrokerContract;
 use Illuminate\Support\Facades\Log;
