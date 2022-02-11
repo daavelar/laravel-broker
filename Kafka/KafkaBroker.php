@@ -3,16 +3,22 @@
 namespace App\Broker\Kafka;
 
 use App\Broker\BrokerContract;
+use Junges\Kafka\Facades\Kafka;
 
 class KafkaBroker implements BrokerContract
 {
-    public function consume(string $topic, callable $handler = null)
+    public function consume(string $topic, callable $handler = null, string $group = 'default')
     {
-        // TODO: Implement consume() method.
+        Kafka::createConsumer()
+            ->withHandler(new $handler)
+            ->subscribe($topic)
+            ->withConsumerGroupId($group)
+            ->build()
+            ->consume();
     }
 
-    public function publish(string $topic, string $message)
+    public function publish(string $topic, string $message, array $options = null)
     {
-        // TODO: Implement publish() method.
+        Kafka::publishOn($topic)->withConfigOptions($options)->send();
     }
 }
